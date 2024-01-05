@@ -3,6 +3,7 @@ import './globals.css'
 import classNames from '@/utills/classNames'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
+import Providers from '@/providers'
 const roboto = Roboto({ 
   weight:["100","300","400","500","700","900"],
   subsets: ['latin'] ,
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={classNames(roboto.variable,
         "container mx-auto px-2 font-roboto"
         )}>
+          <Providers>
           <div className='flex min-h-screen flex-col justify-between'>
             <div>
               <Navbar/>
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
             </div>
             <Footer/>
           </div>
+          </Providers>
           
           </body>
     </html>
