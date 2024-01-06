@@ -2,7 +2,7 @@
 
 import GoogleLogin from "@/components/GoogleLogin";
 import useAuth from "@/hooks/useAuth";
-// import createJWT from "@/utils/createJWT";
+import createJWT from "@/utills/createJWT";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { startTransition } from "react";
@@ -26,7 +26,7 @@ const LoginForm = () => {
     const toastId = toast.loading("Loading...");
     try {
       await signIn(email, password);
-    //   await createJWT({ email });
+      await createJWT({ email });
       startTransition(() => {
         refresh();
         replace(from);
