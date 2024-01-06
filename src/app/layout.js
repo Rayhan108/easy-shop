@@ -4,7 +4,7 @@ import classNames from '@/utills/classNames'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import Providers from '@/providers'
-import { Toaster } from 'react-hot-toast'
+import  Toaster  from '@/components/Toaster/Toaster'
 const roboto = Roboto({ 
   weight:["100","300","400","500","700","900"],
   subsets: ['latin'] ,

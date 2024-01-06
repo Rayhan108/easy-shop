@@ -9,7 +9,7 @@ const nextConfig = {
             },
             {                                                                                                                                              
                 protocol:"https",
-                hostname:"i.ibb.com"
+                hostname:"i.ibb.co"
             }
         ]
     }
