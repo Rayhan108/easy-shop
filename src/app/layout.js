@@ -4,6 +4,7 @@ import classNames from '@/utills/classNames'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import Providers from '@/providers'
+import { Toaster } from 'react-hot-toast'
 const roboto = Roboto({ 
   weight:["100","300","400","500","700","900"],
   subsets: ['latin'] ,
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
             <Footer/>
           </div>
           </Providers>
-          
+          <Toaster/>
           </body>
     </html>
   )
