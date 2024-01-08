@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 
 const GoogleLogin = ({ from }) => {
   const { googleLogin } = useAuth();
+  
   const { replace, refresh } = useRouter();
 
   const handleGoogleLogin = async () => {

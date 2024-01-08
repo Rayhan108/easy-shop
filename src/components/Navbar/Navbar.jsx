@@ -8,15 +8,35 @@ import { afterLoginNavData, beforeLoginNavData } from "@/data/navData";
 import useTheme from "@/hooks/useTheme";
 import useAuth from "@/hooks/useAuth";
 import toast from "react-hot-toast";
+import { usePathname } from "next/navigation";
 const Navbar = () => {
+  const path = usePathname();
   const { user, logout } = useAuth();
   const { uid, displayName, photoURL } = user || {};
   const navData = user ? afterLoginNavData : beforeLoginNavData;
   const { theme, toggleTheme } = useTheme();
   const [navToggle, setNavToggle] = useState(false);
   const handleLogout=async()=>{
-await logout();
-toast.success("logout successfull")
+    const toastId = toast.loading("Loading...");
+    try {
+      await logout();
+      const res = await fetch("/api/auth/logout", {
+        method: "POST",
+      });
+      await res.json();
+      if (path.includes("/dashboard") || path.includes("/profile")) {
+        replace(`/login?redirectUrl=${path}`);
+      }
+      toast.dismiss(toastId);
+      toast.success("Successfully logout!");
+      startTransition(() => {
+        refresh();
+      });
+    } catch (error) {
+      toast.error("Successfully not logout!");
+      toast.dismiss(toastId);
+    }
+
 
   }
   return (
