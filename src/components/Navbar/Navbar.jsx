@@ -24,8 +24,9 @@ const Navbar = () => {
         method: "POST",
       });
       await res.json();
-      if (path.includes("/dashboard") || path.includes("/profile")) {
-        replace(`/login?redirectUrl=${path}`);
+      if (path.includes("/dashboard") || path.includes("/profile") | path.includes("/products")) {
+        // replace(`/login?redirectUrl=${path}`);
+        replace(`/`);
       }
       toast.dismiss(toastId);
       toast.success("Successfully logout!");
