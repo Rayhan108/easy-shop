@@ -1,4 +1,4 @@
-import ThemeContext from "@/contexts/themeContext";
+import ThemeContext from "@/contexts/ThemeContext";
 import { useEffect, useState } from "react";
 
 const ThemeProvider = ({ children }) => {
