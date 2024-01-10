@@ -1,7 +1,7 @@
 "use client";
 
 import useCart from "@/hooks/useCart";
-import classNames from "@/utils/classNames";
+import classNames from "@/utills/classNames";
 import { toast } from "react-hot-toast";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
