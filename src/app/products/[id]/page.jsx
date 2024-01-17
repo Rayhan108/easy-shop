@@ -1,7 +1,8 @@
 import getSingleProduct from "@/utills/getSingleProduct";
 import Image from "next/image";
 import { AiOutlineStar } from "react-icons/ai";
-import AddToCartBtn from "./AddToCartBtn";
+import AddToCartBtn from "./addToCartBtn";
+
 
 export const revalidate = 0;
 
